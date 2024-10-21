@@ -1,4 +1,9 @@
-package PACKAGE_NAME;
+abstract class Figura {
+    protected double perimetro;
+    protected double area;
 
-public class Figura {
+    public Figura() {
+        this.perimetro = perimetro;
+        this.area = area;
+    }
 }

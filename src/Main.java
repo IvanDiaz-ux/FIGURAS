@@ -1,15 +1,49 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+//Ivan camilo Diaz Rodriguez 935388
+import java.util.ArrayList;
+import java.util.Scanner;
 public class Main {
+    private static ArrayList<Figura> figuras = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("Selecciona una figura:");
+        System.out.println("1. RECTANGULO");
+        System.out.println("2. TRIANGULO");
+        System.out.println("3. CIRCULO");
+        int opcion = scanner.nextInt();
+
+        Figura figura = null;
+
+        switch (opcion) {
+            case 1:
+                System.out.print("Ingrese la base del rectángulo: ");
+                double base = scanner.nextDouble();
+                System.out.print("Ingrese la altura del rectángulo: ");
+                double altura = scanner.nextDouble();
+                break;
+
+               // figura = new Rectáangulo(base, altura);
+                break;
+                double radio = scanner.nextDouble();
+                figura = new Circulo(radio);
+               // break;
+            case 2:
+                System.out.print("Ingrese los lado 1  del triangulo : ");
+                double lado1 = scanner.nextDouble();
+                System.out.print("Ingrese los lado 2 del triangulo : ");
+                double lado2 = scanner.nextDouble();
+                System.out.print("Ingrese los lado 3  del triangulo : ");
+                double lado3 = scanner.nextDouble();
+                figura = new Rectáangulo(base, altura);
+                break;
+            default:
+                System.out.println("Opción inválida.");
+        }
+
+        if (figura != null) {
+            System.out.println("Área: " + figura.getarea());
+            System.out.println("Perímetro: " + figura.getperimetro());
         }
     }
 }
